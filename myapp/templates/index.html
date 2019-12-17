@@ -1,12 +1,37 @@
 
 {% extends "base.html" %}
-{% block title %}MyApp: Indice Jinja2{% endblock %}
+{% block title %} Indice {% endblock %}
 {% block content %}
-    <nav>
-        <a href="./detail">Detalle</a>
-    </nav>
-    <h1>Página principal</h1>
-    <p class="important">
-        Hola, mundo con Jinja
-    </p>
+    <table class="region_table">
+        <tr>
+            <th>Región</th>
+            <th>Total Ventas</th>
+            <th>Total Beneficio</th>
+        </tr>
+        <tr>
+            <td>Asia</td>
+            <td>13000000 €</td>
+            <td>1000000</td>
+        </tr>
+        <tr>
+            <td>Australia and Oceania</td>
+            <td>13000000 €</td>
+            <td>1000000</td>
+        </tr>
+        <tr>
+            <td>Central America and the Caribbean</td>
+            <td>13000000 €</td>
+            <td>1000000</td>
+        </tr>
+        <tr>
+            <td>Europe</td>
+            <td>13000000 €</td>
+            <td>1000000</td>
+        </tr>
+        <tr>
+            <td>Middle East and North Africa</td>
+            <td>13000000 €</td>
+            <td>1000000</td>
+        </tr>
+    </table>
 {% endblock %}
