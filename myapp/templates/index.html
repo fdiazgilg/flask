@@ -8,30 +8,12 @@
             <th>Total Ventas</th>
             <th>Total Beneficio</th>
         </tr>
+        {%for key, value in registros %}
         <tr>
-            <td>Asia</td>
-            <td>13000000 €</td>
-            <td>1000000</td>
+            <td>{{key}}</td>
+            <td>{{'%.2f €'| format(value.ingresos_totales)}}</td>
+            <td>{{'%.2f €'| format(value.beneficios_totales)}}</td>
         </tr>
-        <tr>
-            <td>Australia and Oceania</td>
-            <td>13000000 €</td>
-            <td>1000000</td>
-        </tr>
-        <tr>
-            <td>Central America and the Caribbean</td>
-            <td>13000000 €</td>
-            <td>1000000</td>
-        </tr>
-        <tr>
-            <td>Europe</td>
-            <td>13000000 €</td>
-            <td>1000000</td>
-        </tr>
-        <tr>
-            <td>Middle East and North Africa</td>
-            <td>13000000 €</td>
-            <td>1000000</td>
-        </tr>
+        {% endfor %}
     </table>
 {% endblock %}
