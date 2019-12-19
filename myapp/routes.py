@@ -1,9 +1,9 @@
 from myapp import app
-from flask import render_template
+from flask import render_template, request
 import csv
 
 #leer el fichero csv
-fSales = open('./data/sales10.csv', 'r')
+fSales = open('./data/sales.csv', 'r')
 
 csvreader = csv.reader(fSales, delimiter=',')
 registros = []
@@ -37,10 +37,11 @@ def index():
 
     return render_template('index.html', registros=resultado)
 
-@app.route('/detail/<region_name>')
-def detail(region_name):
+@app.route('/detail/')
+def detail():
 
     datos = {}
+    region_name = request.values['region']
     for linea in ventas:
         if linea['region'] == region_name:
             if linea['pais'] in datos:
