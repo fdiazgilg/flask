@@ -11,8 +11,8 @@
         {%for key, value in registros %}
         <tr>
             <td>{{key}}</td>
-            <td>{{'%.2f €'| format(value.ingresos_totales)}}</td>
-            <td>{{'%.2f €'| format(value.beneficios_totales)}}</td>
+            <td align="CENTER">{{'%.2f €'| format(value.ingresos_totales)}}</td>
+            <td align="CENTER">{{'%.2f €'| format(value.beneficios_totales)}}</td>
         </tr>
         {% endfor %}
     </table>

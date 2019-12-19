@@ -2,6 +2,25 @@
 {% extends "base.html" %}
 {% block title %} Detalle {% endblock %}
 {% block content %}
-    <h1>Página de detalle</h1>
-    <p>Lorem ipsum Jinja2</p>
+    <h1>Resumen de {{region}}</h1>
+
+{% if registros | length == 0%}
+    <p>No hay datos</p>
+{% else %}
+    <table class="country_table">
+        <tr>
+            <th>País</th>
+            <th>Total Ventas</th>
+            <th>Total Beneficio</th>
+        </tr>
+        {%for key, value in registros.items() %}
+        <tr>
+            <td>{{key}}</td>
+            <td align="CENTER">{{'%.2f €'| format(value.ingresos_totales)}}</td>
+            <td align="CENTER">{{'%.2f €'| format(value.beneficios_totales)}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
 {% endblock %}
